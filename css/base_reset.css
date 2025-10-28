@@ -1,0 +1,19 @@
+/* css/base/_reset.css */
+*, *::before, *::after {
+    box-sizing: border-box; /* Garante que padding e border não aumentem a largura */
+}
+
+/* Para acessibilidade */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+}
+.skip-link:focus {
+    left: var(--spacing-sm);
+    top: var(--spacing-sm);
+    background: var(--color-neutral-dark);
+    color: var(--color-white);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    z-index: 1000;
+}
