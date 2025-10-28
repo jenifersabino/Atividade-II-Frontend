@@ -1,0 +1,14 @@
+/* css/utilities/_spacing.css - Sistema de Spacing Modular */
+
+/* Classes de Margem (M) e Padding (P) para cada escala (T: Top, B: Bottom, S: Small, L: Large, etc.) */
+
+/* Exemplo de Margem Bottom */
+.mb-xs { margin-bottom: var(--spacing-xs); }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+
+/* Exemplo de Padding All */
+.p-sm { padding: var(--spacing-sm); }
+.p-lg { padding: var(--spacing-lg); }
