@@ -1,0 +1,34 @@
+/* css/components/_button.css */
+a.btn {
+    background: var(--color-secondary); /* Usa a cor secundária */
+    color: var(--color-white);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    display: inline-block;
+    transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Estado Hover e Focus */
+a.btn:hover, a.btn:focus {
+    background: var(--color-secondary-dark);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    outline: none; /* Removido para customização no focus */
+}
+
+/* Estado Active */
+a.btn:active {
+    transform: translateY(1px);
+}
+
+/* Estado Disabled (exemplo para um futuro botão) */
+button:disabled, a.btn.is-disabled {
+    background: var(--color-neutral);
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+    box-shadow: none;
+}
