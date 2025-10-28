@@ -1,0 +1,81 @@
+/* css/layout/_grid.css - Sistema de Grid de 12 Colunas */
+
+/* Layouts Simples: Grid flexível para conteúdo. */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+}
+
+/* Hero Section Responsiva com Flexbox */
+.hero {
+    padding: var(--spacing-lg) 0;
+    background: linear-gradient(180deg, var(--color-neutral-light), transparent);
+    
+    /* Layout para mobile */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+/* Breakpoint para Desktop */
+@media(min-width: var(--bp-lg)){
+    .hero {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    /* Garante que o texto ocupe mais espaço na hero */
+    .hero > * {
+        max-width: 50%;
+    }
+}
+
+
+/* Sistema de Grid de 12 Colunas - Aplicar a containers específicos */
+.grid-12-cols {
+    display: grid;
+    /* Padrão Mobile: 1 coluna */
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+}
+
+/* 5 Breakpoints Responsivos (Aplicando ajustes no Grid de 12 colunas) */
+@media (min-width: var(--bp-xs)) { /* Mobile Grande */
+    .grid-12-cols {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    }
+}
+@media (min-width: var(--bp-sm)) { /* Tablet */
+    .grid-12-cols {
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+    }
+}
+@media (min-width: var(--bp-md)) { /* Desktop Pequeno */
+    .grid-12-cols {
+        grid-template-columns: repeat(8, 1fr); /* 8 colunas */
+    }
+}
+@media (min-width: var(--bp-lg)) { /* Desktop */
+    .grid-12-cols {
+        grid-template-columns: repeat(12, 1fr); /* 12 Colunas Completas */
+        gap: var(--spacing-md);
+    }
+    /* Classes de Coluna para Desktop */
+    .col-span-12 { grid-column: span 12; }
+    .col-span-6 { grid-column: span 6; }
+    .col-span-4 { grid-column: span 4; }
+}
+
+/* Estilo para a galeria */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Mais responsivo que 400px */
+    gap: var(--spacing-xs);
+}
+.gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
