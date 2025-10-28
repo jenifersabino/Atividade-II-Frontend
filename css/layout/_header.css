@@ -9,3 +9,51 @@ header .container {
     justify-content: space-between;
     align-items: center;
 }
+/* Estilo Básico do Botão Toggle (Hambúrguer) */
+.menu-toggle {
+    display: block; /* Visível por padrão em mobile */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-xs);
+}
+
+.icon-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-primary-dark);
+    margin: 5px 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Esconde o label visualmente, mas mantém para leitores de tela */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Transição para o ícone "X" (Classe adicionada via JS) */
+.menu-toggle[aria-expanded="true"] .icon-bar:nth-child(2) {
+    opacity: 0; /* Barra do meio desaparece */
+}
+.menu-toggle[aria-expanded="true"] .icon-bar:nth-child(3) {
+    transform: translateY(8px) rotate(45deg); /* Barra de cima vira diagonal */
+}
+.menu-toggle[aria-expanded="true"] .icon-bar:nth-child(4) {
+    transform: translateY(-8px) rotate(-45deg); /* Barra de baixo vira diagonal */
+}
+
+/* Esconder no Desktop */
+@media (min-width: var(--bp-md)) {
+    .menu-toggle {
+        display: none;
+    }
+}
