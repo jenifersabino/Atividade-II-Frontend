@@ -1,0 +1,22 @@
+/* css/components/_card.css - Cards Responsivos */
+.cards {
+    /* Mantém a lógica responsiva com auto-fit, mas usando variáveis */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Tamanho um pouco maior */
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.card {
+    border: 1px solid var(--color-neutral-light);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    background: var(--color-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
