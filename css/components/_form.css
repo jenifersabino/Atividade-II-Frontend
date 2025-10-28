@@ -1,0 +1,28 @@
+/* css/components/_form.css - Implementação de Formulários */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+    border: 1px solid var(--color-neutral-medium);
+    border-radius: var(--border-radius-sm);
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+input:focus, textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-primary-light);
+    outline: none;
+}
+
+/* Validação Visual */
+input:invalid:not(:placeholder-shown), textarea:invalid:not(:placeholder-shown) {
+    border-color: var(--color-error);
+    box-shadow: 0 0 0 1px var(--color-error);
+}
+input:valid:not(:placeholder-shown), textarea:valid:not(:placeholder-shown) {
+    border-color: var(--color-success);
+}
