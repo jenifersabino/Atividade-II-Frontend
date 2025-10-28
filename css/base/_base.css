@@ -1,0 +1,24 @@
+/* css/base/_base.css */
+body {
+    font-family: var(--font-family-body);
+    line-height: 1.45;
+    margin: 0;
+    color: var(--color-neutral-dark);
+    background: var(--color-bg);
+    padding: 0 var(--spacing-sm); /* 1rem (16px) */
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-sm);
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+a:hover {
+    color: var(--color-primary-dark);
+}
