@@ -1,0 +1,54 @@
+/* css/layout/_navigation.css */
+
+/* Mobile-First: Menu principal escondido, Hambúrguer visível (assumindo que há um ícone) */
+
+/* Lista de navegação */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Esconde a lista por padrão (mobile) */
+}
+
+/* Simulação de Menu Aberto (adicione esta classe via JavaScript) */
+nav.is-open ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Abaixo do header */
+    left: 0;
+    width: 100%;
+    background: var(--color-white);
+    padding: var(--spacing-sm);
+    border-top: 1px solid var(--color-neutral-light);
+}
+nav li {
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px dashed var(--color-neutral-light);
+}
+nav li:last-child {
+    border-bottom: none;
+}
+
+/* Implementação do Menu Principal (Desktop) */
+@media (min-width: var(--bp-md)) {
+    /* Esconde o menu hambúrguer se existir um */
+    .menu-toggle {
+        display: none;
+    }
+    /* Menu principal em Flexbox (Horizontal) */
+    nav ul, nav.is-open ul {
+        display: flex;
+        flex-direction: row;
+        gap: var(--spacing-sm);
+        position: static;
+        width: auto;
+        background: transparent;
+        padding: 0;
+        border: none;
+    }
+    nav li {
+        padding: 0;
+        border-bottom: none;
+    }
+}
